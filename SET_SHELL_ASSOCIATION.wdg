@@ -1,0 +1,288 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : SET_SHELL_ASSOCIATION
+ major_version : 28
+ minor_version : 0
+ type : 7
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x186d375100ea2eef
+ internal_properties : CAAAAAgAAABGLu41kG7fjQV3iS4F72qmnKaNh5694reolNKIW0iw
+ code_elements :
+  internal_properties : CAAAAAgAAAAkhdw9TURenHVY/ZBpnIB9ev40fUH8ToniDCdy16x0g9+WScBY7tjoFw21A6LXOKETEdBITwWhDnS6E0owIAp1TZBVX5DqxydXYxLMbSFL
+  type_code : 31
+  p_codes :
+   -
+     internal_properties : CAAAAAgAAABHocV6T0GMG2701BhMza+e/UZ2NCGRQVyJvhqcQsFdtkJsLjKKKm2O+uG6psUplc7nKgv7XmY8a61ue+3yS7QQ1IoXA5pc3lOvkL4OocHt7LwPx6EF2Gq7qznTHJ8dGdbATWRjOED8qs4wRc4wYuerEf4nC/6GGahjRiuKh21e2NpbUDzxhBXkGBzjZ4G3Q/zSBqPU7ng/hHXyHbWTYtJgbFGfLSXIOTpU8dfP1PAPHiX2cow/9Yh2nSr51pBaI9YWO7D0oBNXxikiI0jkv6/7Faufjp5ZRzdyvuTZHtsAtV8Mb62mOlaAtBf+OPwH6mth+MsAyapJQRvPfnic
+     code : |1-
+      
+      ExplorerAction is Enumération
+      	Open					= "Open"
+      	OpenNewWindow	= "Opennew"
+      	Print				= "Print"
+      	PrintTo			= "Printto"
+      	Explorer				= "Explore"
+      	Properties 				= "Properties"
+      END
+      
+      ActionPosition is Enumération
+      	DefaultPosition			
+      	TopPosition				= "Top"
+      	BottomPosition				= "Bottom"
+      END
+      
+      RegistryLevel is Enumération
+      	CurrentUser  = "HKEY_CURRENT_USER"
+      	LocalComputer 		= "HKEY_LOCAL_MACHINE"
+      END
+      
+      ASSOCMOD is int
+     type : 720896
+   -
+     internal_properties : CAAAAAgAAACxg1Tf69UaFtHq56gET75/meterDa319Mx2PPe6GUp4RsOQOC92r3h8olf1nRKU/wp3CgUJmod4TnIM+RZZxNvRi5fgvL/H3FDXY0bZyE1vSwW7zZrslFgk1Nge5jwUPsKFgqQT/rc9PrcDVY=
+     code : |1-
+      
+      let SHCNE_ASSOCCHANGED = 0x08000000	
+      
+      // Informs the explorer that association was modified
+      IF ASSOCMOD > 0 THEN
+      	API("Shell32", "SHChangeNotify", SHCNE_ASSOCCHANGED, 0, 0, 0)		
+      END
+     type : 720898
+  procedures :
+   -
+     name : SysExplorerFileExtensionAddAction
+     internal_properties : CAAAAAgAAAAM34km+p2LM0Jafr/gijXeTImHicFj7lFu9FrqtgEK91qgYssHbROYrXPWPQuCRnMMZ684xbe6oq1nscH9xKapdVr2FWTPC1MVk/+hO52w5+vn7IjZ6fSvrcAYUpDA0PhZ/QJLYO5TzRKT4VFwJvmoQ216mG+7u8SECyh/lCtC1H7uDeo=
+     procedure_id : 1760123850419023599
+     type_code : 15
+     code : |1-
+      // Summary: Defines an action to run during the right click on a file whose type is defined in the explorer
+      // Syntax:
+      //[ <Result> = ] SysExplorerFileExtensionAddAction (<sNameFileType> is UNICODE string, <eAction> is enumeration, <sActionDescription> is UNICODE string, <sCommandLine> is UNICODE string [, <ePosition> is enumeration [, <eRegistryLevel> is enumeration]])
+      //
+      // Parameters:
+      //	sNameFileType (UNICODE string): Name of the file type (created by SysExplorerFileExtensionCreate)
+      //	eAction (enumeration): Name of the standard explorer action to create
+      //	sActionDescription (UNICODE string): Description of the action (caption that will be displayed in the explorer menu)
+      //	sCommandLine (UNICODE string): Command line to run
+      //	ePosition (enumeration): Position of the action in the menu
+      //	eRegistryLevel (enumeration): Registration level in the registry (CurrentUser or LocalComputer)
+      // Return value:
+      // 	boolean: True if the operation was successful, False otherwise
+      //
+      PROCEDURE SysExplorerFileExtensionAddAction(LOCAL sNameFileType is string UNICODE, LOCAL eAction is ExplorerAction, LOCAL sActionDescription is string UNICODE, ...
+      LOCAL sCommandLine is string UNICODE, LOCAL ePosition is ActionPosition = DefaultPosition, LOCAL eRegistryLevel is RegistryLevel = CurrentUser) : (boolean, array of strings UNICODE)
+      	
+      	arrKeys is array of strings UNICODE
+      	bAdd is boolean
+      	
+      // Rebound
+      (bAdd, arrKeys) = SysExplorerFileExtensionAddAction(sNameFileType, eAction..Value, sActionDescription, sCommandLine, ePosition, eRegistryLevel)
+      RESULT (bAdd, arrKeys)
+      
+      CASE Error:
+      ErrorPropagate()
+      RESULT (False, arrKeys)
+     type : 458752
+   -
+     name : SysExplorerFileExtensionAddAction
+     internal_properties : CAAAAAgAAADAqQkHp+aL9JtL2elETxJwUh9OXyVHK6ZEq6DJivsVvlP4MAM9QbZRYIQGa86ZPRGTVm0GspMNQKxlfEBAEtwAI95zWfY40kK9Asr/O6D5n56M4uF+gEcAT4L6M6zARB0pTM4FKc+TKKkSYNwnUNKnJNccGO0F6PMHQsHsH/BV292jujawbXP/SnbMmSly4xSe3H6hn6lBR8q3clW46sYBMBhNOg==
+     procedure_id : 1760123850419023599
+     type_code : 15
+     code : |1-
+      PROCEDURE SysExplorerFileExtensionAddAction(LOCAL sNameFileType is string UNICODE, LOCAL sAction is string UNICODE, LOCAL sActionDescription is string UNICODE, ...
+      LOCAL sCommandLine is string UNICODE, LOCAL ePosition is ActionPosition = DefaultPosition, LOCAL eRegistryLevel is RegistryLevel = CurrentUser) : (boolean, array of strings UNICODE)
+      	
+      	sKey is string UNICODE
+      	arrKeys is array of strings UNICODE
+      	
+      // Go to the type of file
+      sKey = eRegistryLevel..Value + ["\"] + StringBuild("Software\Classes\%1", sNameFileType)
+      
+      // Creates the type of file
+      IF RegistryExist(sKey) _OR_ (RegistryCreateKey(sKey) _AND_ Add(arrKeys, sKey)) THEN
+      	
+      	// Creates the Shell action
+      	IF RegistryExist(sKey + ["\"] + "Shell") _OR_ RegistryCreateKey(sKey + ["\"] + "Shell") THEN
+      		
+      		// Saves the action
+      		IF RegistryExist(sKey + ["\"] + "Shell" + ["\"] + sAction) _OR_ RegistryCreateKey(sKey + ["\"] + "Shell" + ["\"] + sAction) THEN
+      			
+      			// Stores the description of the action
+      			IF sActionDescription <> "" THEN
+      				RegistrySetValue(sKey + ["\"] + "Shell" + ["\"] + sAction, "", sActionDescription, RegistryTypeString)
+      			END
+      			
+      			// Specified position
+      			IF ePosition <> DefaultPosition THEN
+      				RegistrySetValue(sKey + ["\"] + "Shell" + ["\"] + sAction, "Position", ePosition..Value, RegistryTypeString)
+      			END
+      			
+      			// Saves the action
+      			IF RegistryExist(sKey + ["\"] + "Shell" + ["\"] + sAction + ["\"] + "Command") _OR_ RegistryCreateKey(sKey + ["\"] + "Shell" + ["\"] + sAction + ["\"] + "Command") THEN
+      				
+      				// Stores the command line
+      				RegistrySetValue(sKey + ["\"] + "Shell" + ["\"] + sAction + ["\"] + "Command", "", sCommandLine, RegistryTypeString)
+      				
+      				RESULT (True, arrKeys)
+      			END
+      		END
+      	END
+      END
+      
+      ErrorPropagate()
+      
+      RESULT (False, arrKeys)
+      
+      CASE Error:
+      ErrorPropagate()
+      RESULT (False, arrKeys)
+      
+      END:
+      ASSOCMOD++
+     type : 458753
+   -
+     name : SysExplorerFileExtensionCreate
+     internal_properties : CAAAAAgAAAChg2Ii/HfqUoGxs3sB0KeQshbNknMQqpm4WqgBJmdmKFxnHJBXTqF6uREHbhNgMxPkXai3To1Fe+Pgu83VOUFyZ4021pk0zRycG9ggX9Dh4deqT1DySVNxXFyuB8t6b++g1fS3EpeyXZBUxkr62utr49zUJrYPp8QWUkl+fF7GDR05bXAZeztBM/jGDdiSIUMZqe8rpiJiYjzi/7qKmQZZh6+oIR5KpPeLTrKZFG6lYql+kg==
+     procedure_id : 1760123850419089135
+     type_code : 15
+     code : |1-
+      // Summary: Creates a new type of file in the explorer
+      // Syntax:
+      //[ <Result> = ] SysExplorerFileExtensionCreate (<sExtension> is UNICODE string, <sNameFileType> is UNICODE string, <sUserFriendlyName> is UNICODE string [, <sIconPath> is UNICODE string [, <eRegistryLevel> is enumeration]])
+      //
+      // Parameters:
+      //	sExtension (UNICODE string): Extension associated with the type of file (ex: ".tst")
+      //	sNameFileType (UNICODE string): Name of the file type
+      //	sUserFriendlyName (UNICODE string): User-friendly name (caption displayed in the explorer) associated with the file type
+      //	sIconPath (UNICODE string - default value=""): Full path of the icon associated with the file type
+      //	eRegistryLevel (enumeration): Registration level in the registry (CurrentUser or LocalComputer)
+      // Return value:
+      // 	boolean: True if the operation was successful, False otherwise. Table of created registry keys
+      //
+      PROCEDURE SysExplorerFileExtensionCreate(LOCAL sExtension is string UNICODE, LOCAL sNameFileType is string UNICODE, LOCAL sUserFriendlyName is string UNICODE, ...
+      LOCAL sIconPath is string UNICODE = "", LOCAL eRegistryLevel is RegistryLevel = CurrentUser) : (boolean, array of strings UNICODE)
+      	
+      	sKey is string UNICODE
+      	arrKeys is array of strings UNICODE
+      	
+      // Prefixes with . if necessary
+      sExtension = ["."] + sExtension
+      
+      // Invalid extension?
+      IF sExtension ~= "" THEN
+      	ErrorThrow(500, "No extension was specified")
+      	RESULT (False, arrKeys)
+      END
+      
+      // Builds the path of the key
+      sKey = eRegistryLevel..Value + ["\"] + StringBuild("Software\Classes\%1", sExtension)
+      
+      // Creates the registry key
+      IF RegistryExist(sKey) _OR_ (RegistryCreateKey(sKey) _AND_ Add(arrKeys, sKey)) THEN
+      	
+      	// Associates the type of file
+      	RegistrySetValue(sKey, "", sNameFileType, RegistryTypeString)
+      	
+      	// Go to the type of file
+      	sKey = eRegistryLevel..Value + ["\"] + StringBuild("Software\Classes\%1", sNameFileType)
+      	
+      	// Creates the type of file
+      	IF RegistryExist(sKey) _OR_ (RegistryCreateKey(sKey) _AND_ Add(arrKeys, sKey)) THEN
+      		
+      		// Associates the user-friendly file name
+      		RegistrySetValue(sKey, "", sUserFriendlyName, RegistryTypeString)
+      		
+      		// Associates the icon
+      		IF sIconPath <> "" THEN
+      			RegistrySetValue(sKey + ["\"] + "DefaultIcon", sIconPath, RegistryTypeString)
+      		END
+      	END
+      	
+      	RESULT (True, arrKeys)
+      END
+      
+      ErrorPropagate()
+      
+      RESULT (False, arrKeys)
+      
+      CASE Error:
+      ErrorPropagate()
+      RESULT (False, arrKeys)
+     type : 458752
+   -
+     name : SysExplorerFileExtensionDefineDefaultAction
+     internal_properties : CAAAAAgAAAAM34km+p2LM0Jafr/gijXeTImHicFj7lFu9FrqtgEK91qgYssHbROYrXPWPQuCRnMMZ684xbe6oq1nscH9xKapdVr2FWTPC1MVk/+hO52w5+vn7IjZ6fSvrcAYUpDA0PhZ/QJLYO5TzRKT4VFwJvmoQ216mG+7u8SECyh/lCtC1H7uDeo=
+     procedure_id : 1760123850419154671
+     type_code : 15
+     code : |1+
+      // Summary: <specify the action of the procedure>
+      // Syntax:
+      //[ <Result> = ] SysExplorerFileExtensionDefineDefaultAction (<sNameFileType> is UNICODE string, <eAction> is enumeration [, <eRegistryLevel> is enumeration])
+      //
+      // Parameters:
+      //	sNameFileType (UNICODE string): Name of the file type (created by SysExplorerFileExtensionCreate)
+      //	eAction (enumeration): Name of the standard explorer action
+      //	eRegistryLevel (enumeration): Registration level in the registry (CurrentUser or LocalComputer)
+      // Return value:
+      // 	boolean: True if the operation was successful, False otherwise
+      //
+      PROCEDURE SysExplorerFileExtensionDefineDefaultAction(LOCAL sNameFileType is string UNICODE, LOCAL eAction is ExplorerAction, ...
+      LOCAL eRegistryLevel is RegistryLevel = CurrentUser) : boolean
+      	
+      // Rebound
+      RESULT SysExplorerFileExtensionDefineDefaultAction(sNameFileType, eAction..Value, eRegistryLevel)
+      
+      CASE Error:
+      ErrorPropagate()
+      RESULT False
+     type : 458752
+   -
+     name : SysExplorerFileExtensionDefineDefaultAction
+     internal_properties : CAAAAAgAAABUHz8hVhFi02/J7EhBrMlSNO0MeAqWBppfCjnxm/4kgJdm7XWgB5T6wjMexC1lxpG0E9/miOIxDqpCyq3t86PoLtBkATH/1oB8x09XjEnNP/qUDpwcbSPg0NLupmnY36w8JgJ/5axk6CsPJRVV4Ib+UFiKlFTTIkF739C1c2Up+mtV1Q==
+     procedure_id : 1760123850419154671
+     type_code : 15
+     code : |1-
+      PROCEDURE SysExplorerFileExtensionDefineDefaultAction(LOCAL sNameFileType is string UNICODE, LOCAL sAction is string UNICODE, ...
+      LOCAL eRegistryLevel is RegistryLevel = CurrentUser) : boolean
+      	
+      	sKey is string UNICODE
+      	
+      // Go to the type of file
+      sKey = eRegistryLevel..Value + ["\"] + StringBuild("Software\Classes\%1", sNameFileType)
+      
+      // Creates the type of file
+      IF RegistryExist(sKey) THEN
+      	
+      	// Creates the Shell action
+      	IF RegistryExist(sKey + ["\"] + "Shell") THEN
+      		
+      		// Stores the description of the action
+      		RegistrySetValue(sKey + ["\"] + "Shell", "", sAction, RegistryTypeString)
+      	END
+      END
+      
+      ErrorPropagate()
+      
+      RESULT False
+      
+      CASE Error:
+      ErrorPropagate()
+      RESULT False
+      
+      END:
+      ASSOCMOD++
+     type : 458753
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : COL_SansNom1
+resources :
+ string_res :
+  identifier : 0x15ed8ba8000a3e1d
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

@@ -1,0 +1,169 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : IW_CUSTOMSETUPPLANE
+ major_version : 28
+ minor_version : 0
+ type : 8
+ description : ""
+ subtype : 0
+window :
+ name : IW_CUSTOMSETUPPLANE
+ identifier : 0x286d375001412a0d
+ internal_properties : CAAAAAgAAAAvXibWjxdPRGnla4CYKQPjYytaCpqhFWIq0/rNtouuqg/a6Jh3AjvRhC8UVMSRzlXjBJXy+5B+FJV/giJQ95pbW4ZV2a4ckLGnMbfOfbqkflZkHyV7D2H8LwEV6F6Gt+PIGJLN/PQnzIO11MU3pitRQ99mnPQGWty+rTzOv8LCr5WgoT82bGbQytVz6svh4kKHwPP62+jWmY6S2wBkeTXTT1uYNmat2e6Oli9dmjlTbAykZ8WknZYk7sxlz/rSPozCBandIdZQXm1vxOmkw7XfeB9fqOQj0f0KXOrZxIsSaIzz+/rDcHU45+E1I1mBxI3v+B0A84Ok943p9UgvT91d5BALPZIJB+Gd6Dd0/guVGYZrwqoh1AaH0XnHy416G170fM/P0vDCsh3KIA/cKURTD+9I6gBppzCqQ24myBNxRgxiP2l4CxpDvLAHJRDQlu8t0PvdWNirlsn1aFjF31hrtcPQ0a3hlvMJuaIH5p/Uxd0vy3YAQZOLnNXvaZRXVP5YuUDf0rc9fWpmLA1cdFDzH+gn1HMXWsdmS7/0G9nMa8HO/TMPbTGmM/dUFtCkTAj9Au62Mn8qPTIesBuv79qjoTczxeOnDNDbxDdiqXfZYq7mU3+1jGnulX+klXr9ShtDUiWHxPhzxY9ptV2RA+jw3OGG4CnwTGxjeEu8PuWXWKWr8flQv/4obYo2CKQaUA==
+ properties :
+  width : 530
+  height : 385
+ controls :
+  -
+    name : IW_CUSTOMSETUPPLANE
+    identifier : 0x286d375001422a0d
+    internal_properties : CAAAAAgAAACG6eBUMR/ADRgN0GbO0cJNiort3xcwwFnt2ipgcVkHZOBYdUrmIrX+6bTXQNhswhdVKTrtmu0acjGz9k6pI7c4sJP4llVGJQMXVPq8SS18fmY+LcTuWXmcYQn1foH/gjNaB/VZ4kpVOgu4R1sMKqA3f99Eh2LUhy+UgjW030QQRenTjXB42Etia7zh/jVIfXx2AkzFiO681++HKG/Bsjw24B63V3FgaqaiW0bNcMPLztUc0JqbEblCbYJnAlwEEwoEN6Ri0JaA1Wstl4pwRTD6RtNCAJ4dchqHmv8mvvvSNcJvZnIYCBscPgNGUiCDQ6y+eJJNL8QWfBbonVg0AsDcXCGOA1vX/f5TB3vDKqAE1hNF4XqA7qEveILf5L6VhZ6AgUrVwLC91Ch/s3uupcEy4+YSusXXUbOoI+lFHseog+ucLPe/08fc93nP3XEM91NrMdSX8Boty7pjD6mmlDuYHphqE2HB78QV7JU+yi6pag==
+    properties :
+     width : 530
+     height : 385
+    controls :
+     -
+       name : TITLE_P47
+       identifier : 0x286d375001432a0d
+       internal_properties : CAAAAAgAAACFfForLPcsKm0jKgzGaugY5wOW/Yyzq4gp2eY7smgUVWaZsL4cF+8BEmGvMKuhZuTQ438oyMZsT5GNhkFWIOXn6S6r/BncVDNo1bdB8T+50rhN+tCuNpkq5VATG2NHRn0NWoL+0F1LqlAvm+AhFE5oTP5bxnOfsvUU/BoHObkqvbyT62oEot9IPbePwhyUdwrrEvodh/pUVPrUzWz8VN8JvVAFtBxG0MIhdnldbNNexgrd+zFxCsNbIozyLjemqirIS6kzSBO8+nOo/czQabVIoCoW/FtO9jcpYwVOE2H1Z59eIB1uzgt6bdo+zZK7OypMCmcq5JdE9lSRMBxkAQvK1cGU3Q/Q24jlLQg6Fu3wKl0BdRgd7rG7F+gT0c/GQDg93ousvR2k/fk/TLCIJC8cr/DrsxKHkEbVeb7L6UCVi3xMTcqTRhKKfP9OixUjr6l/HWIcgeJBElKd+jr4WaOgbBekMO0TlGT5i/zSgEFOJp2bka5Gyg2A12zhoZjCqieo02705oUO5edJphThqRJE+/tJjI/w+PLOfexWvvjo2KqOYYYrUljMv2jIp33aR5h0rUNlZjSJtNTiQ5FlVULsYKuPNX32gdydnAc74N6FwcylddeMx3UO56lzFJBDobvYapLNQF8=
+       properties :
+        width : 529
+        height : 73
+       type : 3
+       code_elements :
+        type_code : 2
+        p_codes :
+         -
+           code : |1-
+            
+           type : 14
+     -
+       name : STC_EX
+       identifier : 0x286d375001442a0d
+       internal_properties : CAAAAAgAAACT57+MN6HfCe1D77eGuRhlCr71qgRNjUP5PEz3AX0qA3TIwIKBzm1N7IO+axru29zWY/TS5by3i6Tf6o76uRgwc0wOKToTjSEuEu1T89+ux+ZKW9x0ju9npJxGiFmituQjmoI0juhUJcdvLAWgw2PkhMwxlVXoWw7/xP18uCbXio0i9ztSJPcEinoKHDW9M9iOItqS7HwFp4X23qOfVYcLer4jFH1iLMK6xPApkWV2eFJ22tcQCtIDPeTPEOte5bRAHttqzgBm7Mu9ocJPPtylocs4GsRwI+yFj+DpQdhPU68nVG8Tla9mj0JIKa7oYBD8lg5HaoXQHbZalQ8qcbDO7ujcbbSNSmxS11F0VhoR59pxI7I3xX7AcTUdtdOR3LY3B2DPL8kyDd6ZQyltQBPf6t1QaC1FykW3YpPMwkiJTUyor+cVP7Fma7ef2HczPjyJIta2TFgBxcBSmMd8uiv2auNPKNJu96VYB4Slc9GQcqvDkiUz3D9LO5flkReGRcDZ9WQO83sj1kze3FOPDiKe7mlboqffFqaMLxlbuo/zIlVvCa2UKG4LUHD8ZAXz9aFlq49FGokYnUnx
+       properties :
+        y : -33
+        width : 530
+        height : 27
+       type : 3
+       code_elements :
+        type_code : 2
+        p_codes : []
+     -
+       name : RADIO_REGISTRY_LEVEL
+       identifier : 0x286d375001452a0d
+       internal_properties : CAAAAAgAAABiFCfUDcla4r5JT7rw8qHpSB/Sr2pAqV5/GuWMjtPKERNrBWfHc0qhp7KeOIhVcnqDE/RCNJVzqgXucxT7bgEHu5OcndbQrdsNYJDO1BmyJmMggR4TVlcjHsltvNq9bwPooR4tIw3HwwZMspUYKd52+S/hgShBB68UMeMJhVy5vdtpqNRHLLUtYGPPKJ8heDQRX/rvRKEhViBSCvUyzDjwdnhhcn+KyFzGyhfMfhOBNRY3Nqmq314gq3B+Eh94st+qjepYatSGlV4THPL6RAHW7rTlhfFCr6s8HoHdgfUD5hngJoDJGYu1Uds8I1+llUsTHV4QE7CoESrv/oEvCff85MJcPPjNeRgbHNPjy1f01CAoO6yrpqhSTVF+HfFuIWjNaAkSJZ7nHfRhc4D7X6zJR0+ftbth+FXWiTe4jjQw+Prb5Z88VsFpdmgDFHhDq3VAJQaE+5vrJbj2w+649xIao0VC3k9x7sZPePFCR86OVvvTiZ08BKelqDJeIJrquZWutjxe/OiOWPXnDIDssFii1kPQeZ4TV0c7M2ezYBO3wUiHJAY6aoPJ50p7DM8HCqMdpiDYXlLvy268/46OEoGAeVdx+zTHcVNoBROLMSIL2+XM+aUBfYWrhCD0MQyl9XxtVO/4bh5P6iZwsUQTT58cSZ9YJhHSl3qeyUdz+na1iUfEMRLBBznfFAcd+uTnjfFUxeK74d/5RKmi31nQm+RxyHEegU8rTdVx3suxcF3e9YOuphzwy7h+3RaG7RMOsq5ZtUnMaaMgCJLX+wvgxNL564L02AsRVxhqL+NAF66wX1HDkUP7SBdXVtv4hmzhI2loBGKimHpm/oy82j66KvDte7n4YCD1sFKO+ZAvLd4eVE8Pj73gzVHbgCB1I+rdjjHigWNr/+GH/kiqVC/Ahiq7c9u/WXja9Ugw77yzGTKpH2/h8HUZJfn8PnG6aAfMSZK6cQoLfkcAPEIeUUCTfTk03mrlCCh18tFWgNs1GHHLNUfUHxMrzH2e7cdfRk1fN83uYeHvfjSB69iCUa9H1CLHx2iDTkdnBLcbX7P8ou5T0MysvPo1qBRvXXa9VbnRItNH7PDAUHuBSomtgM10fa8/T91yQgAbVaMo6Nai9fCkaH4+Nswy1EeEjSkY3MkCK5Fx8Q==
+       properties :
+        y : 79
+        width : 524
+        height : 56
+       options :
+        -
+          internal_properties : CAAAAAgAAAD01iSoD8gNdXAaCXlKS7+qeD6XMDcWeLNMxrDj13C3VzzadTPb7HPt/pyvc2RYJLLSiG8pwXbSWiuhlrei2fFogmCC+mWNUuINWO+QCqu/ul0Ru6WGiXPwsegFlBW0PJxjc0JMLaORECBcS4r+lLTBiVAkhbuaHgCdZoY+P3pDB9zw+wQkCbYur8xRfjQgMzdXwWxh0Q==
+        -
+          internal_properties : CAAAAAgAAADJKYNn4laFQ0uj7yTB5nXDjNN/K3HX1mfVr634EMrMi+JZBTRMz8GdOVV/Z5mgON7e1KK/SN1jf2ekcTnDmXPEsAADnvLGcmISu9RlDtQrxAeDjSFPRAkS79OSlT03zLxD70xf/g1UYRFeZgfp4flq8I1xphH3Sw1EXuyezzUzQdtZ/wTNFCeqlzy3DBe0Lg==
+       type : 6
+       controls : []
+       code_elements :
+        type_code : 6
+        p_codes : []
+    type : 32
+    code_elements :
+     type_code : 70
+     p_codes :
+      -
+        code : |1+
+         PROCEDURE MyWindow()
+ menu :
+  name : _Menu
+  identifier : 0x25ddd478a6431ca4
+  internal_properties : CAAAAAgAAAAjoO+VYAXYh2SYpTvD7AgXCHEHRjuTd5K/qNR3zUpM1aIlQYejrbtK76/LWLozAhgdmcRuoxDXe7vi3lf8PoZYYzNtPYlgCK9AarNrSCSSPpGDp+KLIikSwO2L+lCfwFobS8WKQZu2noN9WV5ipxuLKjTaOvfojbcmu1i6FPrF8FEPa+oQBHdRyMYNLYyLF/nTGn2y7NBixG5dC7y2wsO4aXA1CKpzZUca8sBJUrSr9FqhTJMK37pOOZqMTeCIo+trbOMI1osTdzjD26auXrzETrP8OxsAt+HgvahLwDb4kRpR6lQOjBIj
+  options : []
+ languages :
+  - en-GB
+ popup_menus : []
+ message_bar : {}
+ actionbar : {}
+ code_elements :
+  type_code : 71
+  p_codes : []
+  procedures :
+   -
+     name : Init
+     procedure_id : 1760123846121761293
+     type_code : 14
+     code : |1-
+      // Procedure called once to initialize the custom planes
+      PROCEDURE Init()
+      
+      SWITCH SET_WDSETUPPLUGIN.geDefaultLocation
+      	CASE CurrentUser
+      		RADIO_REGISTRY_LEVEL = 2
+      		
+      	CASE LocalComputer
+      		RADIO_REGISTRY_LEVEL = 1
+      END
+     type : 458752
+   -
+     name : bControl
+     procedure_id : 1760123846121826829
+     type_code : 14
+     code : |1-
+      //Check procedure used to validate the move to the next plane
+      PROCEDURE bControl(nCurrentPlane is int <useful>) : boolean
+      
+      // nCurrentPlane: contains the number of the current plane
+      
+      SWITCH RADIO_REGISTRY_LEVEL
+      	CASE 1
+      		SET_WDSETUPPLUGIN.geDefaultLocation = LocalComputer
+      		
+      	CASE 2
+      		SET_WDSETUPPLUGIN.geDefaultLocation = CurrentUser
+      END
+      
+      // If we can go to the next plane:
+      RESULT True
+      
+      // If an input error or a problem prevents from going to the next plane:
+      // (We advise you to display a message to the user to specify the reason)
+      // RESULT False
+     type : 458752
+   -
+     name : nNextPlane
+     procedure_id : 1760123846121892365
+     type_code : 14
+     code : |1-
+      // Procedure used to give the custom plane to display
+      PROCEDURE nNextPlane(nCurrentPlane is int) : int
+      
+      // nCurrentPlane: current plane
+      SWITCH nCurrentPlane
+      
+      	// Initialization plane: start the sequence
+      	CASE 0
+      		RESULT 1
+      		
+      		// Sequence...
+      		// CASE 1
+      		// RESULT 2
+      		
+      	OTHER CASE
+      		// Sequence completed: end
+      		RESULT 0
+      END
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : FI_SansNom1
+resources :
+ string_res :
+  identifier : 0x15ddd47819451ca4
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : CAAAAAgAAAC68/W0/adbG0nFCRhrE42B5HRnbDzVHaz86sSQyxlBk7I=
+rad :
+ internal_properties : CAAAAAgAAABoAN7PLpwJW3EiA7WVZdCA5EwrCA1rvutcDHooMWKe

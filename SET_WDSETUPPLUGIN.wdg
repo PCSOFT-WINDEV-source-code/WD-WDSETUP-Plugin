@@ -1,0 +1,178 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : SET_WDSETUPPLUGIN
+ major_version : 28
+ minor_version : 0
+ type : 7
+ description : ""
+ subtype : 0
+procedure_set :
+ identifier : 0x186d375000d42b36
+ internal_properties : CAAAAAgAAABGLu41kG7fjQV3iS4F72qmnKaNh5694reolNKIW0iw
+ code_elements :
+  type_code : 31
+  p_codes :
+   -
+     internal_properties : CAAAAAgAAAB5ULgh1StQOZP4ibMc0B7FdvDC+ONLTO0FDhyeGp1DARRhUSEA7y3zUl0y//HYDSwn263LiJnGO5h11QKTS9Osb9OzdzZNiz3LdKztZ4EwJ8VqH20nrTM2v3Ap913JQErzHwBKNB0d5Gj6PqWAZUtH/r03KUPOX9f6990wDbv2dQ==
+     code : |1-
+      
+      // All the strings must be processed in UNICODE
+      // If an ANSI must be used, an "ANSI string" type must be explicitly declared
+      
+      // PLUGININFO: contains information regarding the setup
+      // These members and their value must not be modified
+      STPluginInfo is Structure  
+      	sSetupDir 					is string UNICODE			// Setup path
+      	hFTPHandle 					is int					// Handle to be used with the FTP functions to manage the files on the server (when deploying an HTTP reference setup by FTP)
+      	Label		 				is Control					// Caption used in the BeforeSetup() and AfterSetup() processes from the setup wizard (if the plugin performs a long process, this control can be used to inform the user)
+      	bWithAdminRights 			is boolean					// True if the administrator rights have been assigned to the setup, False otherwise
+      	bNetworkReferenceInstall	is boolean				// True if the current setup is a reference server setup or a client setup
+      	bSilentInstall				is boolean				// True if the setup is performed in 'Silent' mode (during an automatic application update for example), False for the other setup modes
+      	bPushInstall				is boolean				// True if the setup is performed in 'Push' mode, False for the other setup modes
+      	sPathToExe					is string UNICODE		// Full path of the reference executable installed
+      END
+      
+      // UNINSTALLPLUGIN: used to save the elements to clean, erase and delete during the uninstall operation
+      // The value of these members can be modified
+      STPluginUninstall is Structure  
+      	arrFiles 					is array of strings UNICODE		// List of files to delete	
+      	tabDirectories 				is array of strings UNICODE		// List of directories to delete (Caution: only the empty directories will be deleted!)
+      	arrRegistryKeys 			is array of strings UNICODE		// List of registry keys to delete
+      	tabRegistryValues 			is array of strings UNICODE		// List of values of registry key to delete (format: <Key Path>\<Value Name>)
+      	tabINIValues 				is array of strings UNICODE 		// List of .INI values to delete (format: <Section>TAB<Value Name>TAB><Path of .INI>)
+      	tabINISections 				is array of strings UNICODE 		// List of .INI sections to delete (format: <Section>TAB<Path of .INI>)
+      	arrServices 				is array of strings UNICODE		// List of services to uninstall
+      	tabScheduledTask 			is array of strings UNICODE		// List of scheduled tasks to delete
+      	tabRunExe 					is array of strings UNICODE		// List of executables to run during the uninstall operation (full path or relative path in relation to the uninstaller path)
+      END
+      
+      
+      // CODE BELOW CAN BE CUSTOMIZED AS NEEDED ///////////
+      geDefaultLocation is RegistryLevel = CurrentUser
+     type : 720896
+  procedures :
+   -
+     name : Startup
+     internal_properties : CAAAAAgAAADoOmyGw893nzmsyPLtgHOPSgQRDqxzM0s/cArxnaGUyEZdW2qsRwMBPc1r2pMqmHo31DplwZZ1tUgoB7gHzDxu/REfDaJrLH/b/jX9Zbi4yjri4eNQHxXxEOF+83B7qBKRHSWJg1xZ1X5V8h4PzXU1nzBN+t1ecNJs1fYrCOrPiza1tjxqoafVEFHNNE3f/vXVmVh1zQ==
+     procedure_id : 1760123846122613558
+     type_code : 15
+     code : |1-
+      // Procedure for initializing the plugin, called when starting the setup
+      PROCEDURE Startup(stInfo is STPluginInfo <useful>)	
+      
+      // CODE TO EXECUTE CAN BE CUSTOMIZED AS NEEDED ///////////
+     type : 458752
+   -
+     name : BeforeInstall
+     procedure_id : 1760123846122679094
+     type_code : 15
+     code : |1-
+      // Procedure called when starting the setup
+      PROCEDURE BeforeInstall(stInfo is STPluginInfo <useful>, stUninstall is STPluginUninstall <useful>)
+      
+      // CODE TO EXECUTE CAN BE CUSTOMIZED AS NEEDED ///////////
+     type : 458752
+   -
+     name : AfterInstall
+     internal_properties : CAAAAAgAAACqBfZA0LbusSSka3GmKJNK7VKGos4FiVaGaMhJgRZa33CVG/JpYDRxHlYCKDak4dpWLm57xtT5U9YCGUYk4nSFpe6QjIBkC3YUrJ7Jca79rqN46Paaz1x7CaZRuXRxweQA1/icoXL+OU2AG6TVLRDx5kzCT8liRert4uEVynIKww/hmQu4K3LPpcr8/NG92MRGBBfWSUI=
+     procedure_id : 1760123846122744630
+     type_code : 15
+     code : |1-
+      // Procedure called after the setup
+      PROCEDURE AfterInstall(stInfo is STPluginInfo, stUninstall is STPluginUninstall <useful>)
+      
+      // CODE BELOW CAN BE CUSTOMIZED AS NEEDED ///////////
+      let NAME_EXE = fExtractPath(stInfo.sPathToExe, fFileName + fExtension)
+      
+      // If we have the administrator rights
+      IF stInfo.bWithAdminRights THEN
+      	
+      	// In client setup only
+      	IF stInfo.bNetworkReferenceInstall = False THEN
+      		
+      		bCreated is boolean
+      		arrReg is array of strings UNICODE
+      		
+      		// Creates the extensions of the files
+      		(bCreated, arrReg) = SysExplorerFileExtensionCreate(".wdinfo", "ExampleFile", "Example file (WDSETUP plugin)", "", geDefaultLocation)
+      		
+      		// Adds the created registry keys to the list of keys to delete during the uninstall operation
+      		Add(stUninstall.arrRegistryKeys, arrReg)
+      		
+      		// Associates the extensions with the program
+      		(bCreated, arrReg) = SysExplorerFileExtensionAddAction("ExampleFile", ExplorerAction.Open, "Open", stInfo.sSetupDir + [fSep] + NAME_EXE, DefaultPosition, geDefaultLocation)
+      		SysExplorerFileExtensionDefineDefaultAction("ExampleFile", ExplorerAction.Open, geDefaultLocation)
+      		
+      		// Adds the created registry keys to the list of keys to delete during the uninstall operation
+      		Add(stUninstall.arrRegistryKeys, arrReg)
+      	END		
+      END
+     type : 458752
+   -
+     name : BeforeAutoModif
+     procedure_id : 1760123846122810166
+     type_code : 15
+     code : |1-
+      // Procedure called before the automatic data modification (SDD)
+      PROCEDURE BeforeAutoModif(stInfo is STPluginInfo <useful>, stUninstall is STPluginUninstall <useful>)
+      
+      // CODE TO EXECUTE CAN BE CUSTOMIZED AS NEEDED ///////////
+     type : 458752
+   -
+     name : AfterAutoModif
+     procedure_id : 1760123846122875702
+     type_code : 15
+     code : |1-
+      // Procedure called after the automatic data modification (SDD)
+      PROCEDURE AfterAutoModif(stInfo is STPluginInfo <useful>, stUninstall is STPluginUninstall <useful>)
+      
+      // CODE TO EXECUTE CAN BE CUSTOMIZED AS NEEDED ///////////
+     type : 458752
+   -
+     name : sCustomPlane
+     procedure_id : 1760123846122941238
+     type_code : 15
+     code : |1-
+      // Procedure used to declare an internal window to display in the setup wizard
+      PROCEDURE sCustomPlane() : string
+      
+      // CODE BELOW CAN BE CUSTOMIZED AS NEEDED ///////////
+      
+      // If no internal window is required:
+      //result ""
+      
+      // If an internal window must be displayed in the wizard:
+      RESULT "IW_INSTALLCUSTOMPLANE"
+     type : 458752
+   -
+     name : BeforeUpload
+     procedure_id : 1760123846123006774
+     type_code : 15
+     code : |1-
+      // Procedure called before sending by FTP (HTTP reference setup)
+      PROCEDURE BeforeUpload(stInfo is STPluginInfo <useful>, stUninstall is STPluginUninstall <useful>)
+      
+      // CODE TO EXECUTE CAN BE CUSTOMIZED AS NEEDED ///////////
+     type : 458752
+   -
+     name : AfterUpload
+     procedure_id : 1760123846123072310
+     type_code : 15
+     code : |1-
+      // Procedure called after sending by FTP (HTTP reference setup)
+      PROCEDURE AfterUpload(stInfo is STPluginInfo <useful>, stUninstall is STPluginUninstall <useful>)
+      
+      // CODE TO EXECUTE CAN BE CUSTOMIZED AS NEEDED ///////////
+     type : 458752
+  procedure_templates : []
+  property_templates : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : COL_SansNom1
+resources :
+ string_res :
+  identifier : 0x1575a8cf0009ee63
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : CAAAAAgAAABtB9HWVzrXO2+4NDRVK0vmzaNKrCKqH1DBX30lMmGZ

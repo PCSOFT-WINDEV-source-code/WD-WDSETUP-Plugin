@@ -1,0 +1,89 @@
+#To edit and compare internal_properties, use WINDEV integrated tools.
+#Internal properties refer to the properties of controls in windows, reports, etc.
+info :
+ name : WD WDSETUP Plugin
+ major_version : 28
+ minor_version : 0
+ type : 4097
+ description : ""
+ subtype : 0
+project :
+ identifier : 0x0
+ internal_properties : CAAAAAgAAAC2McoUJ9oTZyymD8v27mlcMDtJU1ekt2tx4NwxAeaNE+X1jdDU6a+gVqqDhNr1n93Qsx0RNQ9efzNtSyH0OP2fOnibkg8ZgyQj83L5EQUs9I2+ZIC9BzF56nBeMJ5k24eQIViUqLIOHA0gM1p4mRTdfefRd2kpFeHtrzMYX9nunjOhsfztNGi33nryogdDnozBAhxh24G/Er9+vgTaWxit84UKBOENsERL4xGcDBaPn/t56yNow6Mqt/2V/NKmdH9EIDKjn50wCIJ3vNyZuDHAokUIpbAhCc0PX9MR+ebA7u6/2Q1Y71br5pX8IFWilVxsUE3X5Y41sfDR64aJVkxxx3Lm1Bd8jlwlHSuzHQmDswZEdQtTzKfqSf/mUP+Spoowt81TYnhRcv3ZWmPgZbv/XV/1enlmkVOJhXHNYDcKXxy8bac5npNYuZO1zLfwjwQwEsFGqkF0DoRn4i4OGcUCsO1XKhIcmzLy/Tg3t7m/4tFBz1mxfrJbIDAt4GZuWvR08jJ42Y5hR6/vsUdBerWrmQXJNWUAa/aGuRvhD1bQnTJCkU6MXY7gYFSoiX/H2mQpi6a6M6JGguT44jUhf/2A1ugUlGdNHowVNMh6nO5brnj6V0ofQ6Gvy/fUPSg1K4Tk9bUeWU8XihdFqCC1BpnsdZ5rWFvRSWDwwaszFBA/XdnysfgSCipw9B/VxTHGp4qDgVvnCIU4GC3aImuwbY0cDNE3dThn1IVqY30QRPrnuZALdlVAK2edBq4yU4NS7aKBVx9KKRWGJCHvXwRVD3hHxbR2A2ejUSbf0naMsWvkTCqot9HfUPPtDTM9YNE6Q7aGnMOyGEiI+GiQVmV4vuSAaTPXQGKykLIkYsOAPbOGvKUe0/uw+jDI18PWw+7XiFjQ+xoZ5A3fajthiUsYZ7SsMuTZC1X/nNMnqTcr+S24pGP3zQv4qm5/Bw3S13N8Zqwr9zqOGVkkqRWTztfcOWnfUBVHt/8nqEBAj8mdq2xQ3uEe9XL+FelYk++HulP/4R56hQ4NYAYGQqw1A619mm+gSvbf4Vtj2HvagSL3yJ2tcof2Jr2quPHJwnQPrDWzBF+/lDljpbk4GTNBB8ZqcULD8OY+d7iht4Dho3mGK2mkPBY59gwA15JUQkBF/31SxtVMjP8LV/nub9UWAe464FWdY9DtmsKpVOBm9L8BjcTI7JxulNOfSM7P4FVsiSPQh/5mZGB5EAtzLW6RkNStjlq1F3Zvj2YL+cVsu4P4IRKswOYx5KthOiXG26FFaeWnEVKP/k+jsqJgX+xlmDFNSEq+kyLBkSICYswpBfDRM+E8cDs4EaqP36h5g2ygMHsJOVkFEmxtU4HDNfqHeSN9mfbYDfF2n0/4WiMzqS6P8SNxi5a/2FypCF1RT/dxZKDAGEFf8IMsk/VscrcGC4Gf76Gkr88P9jAErWlM6bXzQdEwVSsQhXHrVQ2CKBaJ3pf9++ypWirwoi2RtGl/Zx8Bfq4qWqi+BloAr+DFOoAdbP0hMj3ThjT5Bq48FFmgN51vCoyjKBDQEMki0j0mR9wkBjel5BwfJJ7sWRuOWDo9Rwe3AVxH9TL1KN1sULAE1b2andqiulKpEWJpdaKL2MQqCDh+eHlWwli9XezUK6SmsddC4xoBLamz1fHOk5hcamWqqjDs2WvkJEV+MRR8zGR4iBodZw9CNTujz1XPhTBDKDwD7lN4zkDcdhtjnEDj7vWmKRc99PjgcQmex43xSo351tvhYBlPIZbi8KQjPKEjgyp8J/LmKEOaW4wA7fPCDWCmuRNX/r55UrlmoHqcDGiiHOYNjpEFOdaXyIwdcF8HgpGfnBJn5zy/g8V5l74WNRRmIx5L6KWJfPRd57OzmtoXRckl6p1rp7VMgajULQALHMYCLrSxpzUCTYLa9R+AU7PCq9Xpn041ZyWz18Co4TrCbMlcAVH1dJyjoNbnQ/7hLOUDgfpSuUo=
+ configurations :
+  -
+    name : Library
+    internal_properties : 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
+    configuration_id : 8453671058384602746
+    type : 3
+    generation_directory : .\Exe\Bibliothèque
+    generation_name : WDSETUPPlugin.wdl
+    version :
+     version : 21.00Aa
+     internal_generation_version : 18
+    language : 2
+    telemetry :
+     status : disabled
+ elements :
+  identifier : 0x4575a88d0002ee1a
+  elements :
+   -
+     name : SET_SHELL_ASSOCIATION
+     identifier : 0x45ed91a80041adcf
+     internal_properties : CAAAAAgAAAAEAmxIdyyEp73fhfzT73j0JHvje0Htaw92IUcMd77eakK802rWYnYL4kexD5dJMacREQ==
+     physical_name : .\SET_SHELL_ASSOCIATION.wdg
+     type : 7
+   -
+     name : SET_WDSETUPPLUGIN
+     identifier : 0x45ed91a7003fad81
+     internal_properties : CAAAAAgAAABHw6/zMG1FZnKAdsDQMk174ZDYUH5a17GOH0qmX4YMPMxkH56iXml8EwjyzlaKdmpS0g==
+     physical_name : .\SET_WDSETUPPLUGIN.wdg
+     type : 7
+   -
+     name : IW_CUSTOMSETUPPLANE
+     identifier : 0x45ed44bd002b3a86
+     internal_properties : CAAAAAgAAABKwLJWVRIaxY+t2gMPVdVTus15KZPHxaq/+phEG+oqhrJYUniiXu8d8FVPqWlnE4VP1w==
+     physical_name : .\IW_CUSTOMSETUPPLANE.wdw
+     type : 8
+  other_elements : []
+  net_assemblies : []
+  uwp_api : []
+  external_components : []
+  internal_components : []
+ report_and_queries_enabled : false
+ data_directory : <RepDonneesCommun>
+ languages :
+  - en-GB
+ wd_style_sheet : .\WDSetupPlugin.sty
+ wb_style_sheet : .\WDSetupPlugin.wws
+ url_rewriting :
+  internal_properties : CAAAAAgAAADkPzcUdUUS7wCiun+MCjqYH70RJdzkSv/nRvXZ3ENdikMa6bcHtsAH
+ code_elements :
+  internal_properties : CAAAAAgAAABseimUYz4VdXZ8hGsGFqoxLDfDcHkNZdBf0iQg2FQcqmw5VrO2lryVMt3efm9RagPlXJBReauIsX3ZdB8=
+  type_code : 0
+  p_codes :
+   -
+     type : 196621
+   -
+     type : 196627
+     enabled : false
+  orphans :
+   -
+     name : Library
+     identifier : 0x4575a8b400278652
+     code_elements :
+      type_code : 159
+      p_codes : []
+ code_parameters :
+  internal_properties : CAAAAAgAAACVGQgYbalU7DKC3oH4ItDrjtcTHXXV/EuH8q0IbhyQlw==
+  original_name : PluginWDSetup
+rad :
+ internal_properties : CAAAAAgAAABhIL0UXeZmxDJxY3Xy0Q==
+project_explorer :
+ explorer_type : project
+resources :
+ string_res :
+  identifier : 0x0
+  internal_properties : CAAAAAgAAACm76HWfKGWp33VjXInA4cRlqArlgTTA862QGt72W2ld5Y=
+custom_note :
+ internal_properties : CAAAAAgAAAAd98VSJfHHqE3P0QHwrwdhn7ig8dWBR6valpUTgnAMTVXiDg==
